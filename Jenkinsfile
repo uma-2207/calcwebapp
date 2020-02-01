@@ -3,6 +3,7 @@ node{
         git 'https://github.com/uma-2207/calcwebapp.git'
     }
     stage('Maven Package'){
+        def javahome = tool name: 'Java', type: 'java'
         def mvnHome = tool name: 'Maven', type: 'maven'
         sh "${mvnHome}/bin/mvn package"
     }
